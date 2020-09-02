@@ -1,1 +1,4 @@
 roles_galaxy/
+/.idea/
+/.vscode/
+.DS_Store

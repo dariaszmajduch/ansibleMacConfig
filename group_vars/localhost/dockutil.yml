@@ -1,0 +1,41 @@
+dockutil_install_path: /usr/local/bin/dockutil
+
+dockitems_remove_all: true
+
+dockitems_enabled:
+  - name: Launchpad
+    path: "/Applications/Launchpad.app"
+    pos: 1
+  - name: Calendar
+    path: "/Applications/Calendar.app"
+    pos: 2
+  - name: Notes
+    path: "/Applications/Notes.app"
+    pos: 3
+  - name: Microsoft Outlook
+    path: "/Applications/Microsoft Outlook.app"
+    pos: 4
+  - name: Microsoft Teams
+    path: "/Applications/Microsoft Teams.app"
+    pos: 5
+  - name: Microsoft OneNote
+    path: "/Applications/Microsoft OneNote.app"
+    pos: 6
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 7
+  - name: Spotify
+    path: "/Applications/Spotify.app"
+    pos: 8
+  - name: iTerm2
+    path: "/Applications/iTerm2.app"
+    pos: 9
+  - name: PyCharm CE
+    path: "/Applications/PyCharm CE.app"
+    pos: 10
+  - name: WebStorm
+    path: "/Applications/WebStorm.app"
+    pos: 11
+  - name: Visual Studio Code
+    path: "/Applications/Visual Studio Code.app"
+    pos: 12

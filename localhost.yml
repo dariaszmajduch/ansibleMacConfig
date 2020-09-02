@@ -3,4 +3,6 @@
   become: no
   vars:
     local_user_name: user.name
-
+  roles:
+    - geerlingguy.homebrew
+    - fubarhouse.macdock

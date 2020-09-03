@@ -1,0 +1,5 @@
+npm_packages:
+  - bower
+  - express
+  - grunt
+  - grunt-cli

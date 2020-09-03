@@ -1,0 +1,12 @@
+- name: Create directory for PyCharm workspace
+  file:
+    path: ~/Documents/PyCharm_workspace
+    state: directory
+    mode: 0755
+
+- name: Install pip packages
+  pip:
+    name: "{{ item.name | default(item) }}"
+    version: "{{ item.version | default(omit) }}"
+    virtualenv: /Users/{{ local_user_name }}/Documents/PyCharm_workspace/venv
+  with_items: "{{ pip_packages }}"

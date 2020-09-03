@@ -16,10 +16,14 @@ sudo pip install ansible virtualenv
 ansible-galaxy install geerlingguy.homebrew
 ansible-galaxy install fubarhouse.macdock
 ```
-6. Change local_user_name value in `localhost.yml`
-7. Install needed software which could not be installed using homebrew (i.e. WebStorm)
-8. Check if chromedriver and geckodriver versions are correct (in `group_vars/localhost/drivers.yml` file)
-9. Run ansible scripts
+6. In `localhost.yml`:
+  - change local_user_name
+  - change github_org_name
+  - change bitbucket_org_name
+7. Update repositories names in `group_vars/localhost/repositories.yml`
+8. Install needed software which could not be installed using homebrew (i.e. WebStorm)
+9. Check if chromedriver and geckodriver versions are correct (in `group_vars/localhost/drivers.yml` file)
+10. Run ansible scripts
 ```
 ansible-playbook localhost.yml --ask-become-pass
 ```

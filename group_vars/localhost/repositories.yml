@@ -1,0 +1,10 @@
+repositories_dir:
+  - name: 'GH_dir_name'
+    service: 'GitHub'
+    repositories:
+      - name: 'repo_name'
+
+  - name: 'BB_dir_name'
+    service: 'BitBucket'
+    repositories:
+      - name: 'repo_name'

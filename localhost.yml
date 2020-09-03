@@ -3,7 +3,11 @@
   become: no
   vars:
     local_user_name: user.name
+    github_org_name: GH_org_name
+    bitbucket_org_name: BB_org_name
   roles:
     - geerlingguy.homebrew
     - fubarhouse.macdock
     - drivers
+    - repositories
+    - packages

@@ -11,3 +11,5 @@
     - drivers
     - repositories
     - packages
+    - chrome_extensions
+    - setup_osx

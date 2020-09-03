@@ -1,0 +1,25 @@
+- name: Ensure extensions directory exists
+  file:
+    dest: /Users/{{ local_user_name }}/Library/Application Support/Google/Chrome/External Extensions
+    state: directory
+    mode: 0755
+
+- name: Chrome Extensions
+  template:
+    src: chrome-extensions.json.j2
+    dest: /Users/{{ local_user_name }}/Library/Application Support/Google/Chrome/External Extensions/{{ item.id }}.json
+    mode: 0644
+    backup: yes
+  with_items:
+    - name: JSON Formatter
+      id: bcjindcccaagfpapjjmafapmmgkkhgoa
+    - name: ModHeader
+      id: idgpnmonknjnojddfkpgkljpfnnfcklj
+    - name: React Developer Tools
+      id: fmkadmapgofadopljbjfkapdkoienihi
+    - name: Redux DevTools
+      id: lmhkpmbekcpmknklioeibfkpmmfibljd
+    - name: Resource Override
+      id: pkoacgokdfckfpndoffpifphamojphii
+    - name: URL Shortener
+      id: oodfdmglhbbkkcngodjjagblikmoegpa

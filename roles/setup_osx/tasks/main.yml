@@ -1,0 +1,95 @@
+# Screenshots
+- name: Create directory for screenshots
+  file:
+    path: ~/Desktop/screenshots
+    state: directory
+    mode: 0755
+
+- name: Save screenshots to the desktop/screenshots directory
+  shell: defaults write com.apple.screencapture location -string "$HOME/Desktop/screenshots"
+
+- name: Save screenshots in PNG format (other options BMP, GIF, JPG, PDF, TIFF)
+  shell: defaults write com.apple.screencapture type -string "png"
+
+# Energy saving
+- name: Disable the Screensaver
+  shell: defaults write com.apple.screensaver idleTime 0
+
+- name: Sleep the display after 15 minutes
+  shell: sudo pmset -a displaysleep 15
+
+- name: Set machine sleep to 5 minutes on battery
+  shell: sudo pmset -b sleep 5
+
+# Dock
+- name: Dock - set icon size of Dock
+  shell: defaults write com.apple.dock tilesize -int 30
+
+- name: Dock - set minimize/maximize window effect
+  shell: defaults write com.apple.dock mineffect -string "genie"
+
+- name: Minimize windows into their application’s icon
+  shell: defaults write com.apple.dock minimize-to-application -bool true
+
+- name: Show indicator lights for open applications in the Dock
+  shell: defaults write com.apple.dock show-process-indicators -bool true
+
+- name: Animate opening applications from the Dock
+  shell: defaults write com.apple.dock launchanim -bool false
+
+- name: Not hide and show the Dock automatically
+  shell: defaults write com.apple.dock autohide -bool false
+
+# Finder and desktop
+- name: Finder - show hidden files by default
+  shell: defaults write com.apple.finder AppleShowAllFiles -bool true
+
+- name: Finder - show all filename extensions
+  shell: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+- name: Show the Path Bar in Finder
+  shell: defaults write com.apple.finder ShowPathbar -bool true
+
+- name: Show the Status Bar in Finder
+  shell: defaults write com.apple.finder ShowStatusBar -bool true
+
+# - name: Show the Tab Bar in Finder
+# Need to be done manually - Finder > View > Show Tab Bar
+
+- name: Keep folders on top when sorting by name
+  shell: defaults write com.apple.Finder _FXSortFoldersFirst -bool true
+
+- name: Set default finder view style as columns
+  shell: defaults write com.apple.finder FXPreferredViewStyle -string "Clmv"
+
+- name: Sort icons on the desktop and in other icon views by kind
+  shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:arrangeBy kind' ~/Library/Preferences/com.apple.finder.plist
+  shell: /usr/libexec/PlistBuddy -c 'Set :FK_StandardViewSettings:IconViewSettings:arrangeBy kind' ~/Library/Preferences/com.apple.finder.plist
+  shell: /usr/libexec/PlistBuddy -c 'Set :StandardViewSettings:IconViewSettings:arrangeBy kind' ~/Library/Preferences/com.apple.finder.plist
+
+- name: Change grid spacing for icons on the desktop and in other icon views
+  shell: /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
+  shell: /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
+  shell: /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
+
+- name: Change the size of icons on the desktop and in other icon views
+  shell: /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+  shell: /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+  shell: /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+
+- name: Set highlight color to light blue (rgb values divided by 255)
+  shell: defaults write NSGlobalDomain AppleHighlightColor -string "0.573 0.678 1"
+
+- name: Always show scrollbars
+  shell: defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+- name: Expand save panel by default
+  shell: defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+  shell: defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+- name: Set sidebar icon size to small
+  shell: defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+
+# Confirm all changes
+- name: Restart Finder
+  shell: killall Finder

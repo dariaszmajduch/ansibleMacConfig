@@ -1,0 +1,27 @@
+- name: Create .ssh directory
+  file:
+    path: ~/.ssh
+    state: directory
+    mode: 0700
+
+- name: Create .aws/credentials directory
+  file:
+    path: ~/.aws/credentials
+    state: directory
+    mode: 0700
+
+- name: Copy config files to home directory
+  template:
+    src: "{{ item.template }}"
+    dest: ~/{{ item.name }}
+  with_items:
+    - name: .bash_profile
+      template: bash_profile.j2
+    - name: .gitconfig
+      template: gitconfig.j2
+
+- name: Copy hosts file to /etc/hosts
+  become: true
+  template:
+    src: hosts.j2
+    dest: /etc/hosts

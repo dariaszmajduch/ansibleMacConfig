@@ -12,7 +12,7 @@
     backup: yes
   with_items:
     - name: JSON Formatter
-      id: bcjindcccaagfpapjjmafapmmgkkhgoa
+      id: mhimpmpmffogbmmkmajibklelopddmjf
     - name: ModHeader
       id: idgpnmonknjnojddfkpgkljpfnnfcklj
     - name: React Developer Tools

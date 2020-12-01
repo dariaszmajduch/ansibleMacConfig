@@ -34,6 +34,7 @@ homebrew_installed_packages:
   - sshpass
   - telnet
   - terraform
+  - tflint
   - unzip
   - vim
   - wget

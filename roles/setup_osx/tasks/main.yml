@@ -64,17 +64,29 @@
 
 - name: Sort icons on the desktop and in other icon views by kind
   shell: /usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:arrangeBy kind' ~/Library/Preferences/com.apple.finder.plist
+
+- name: Sort icons on the desktop and in other icon views by kind
   shell: /usr/libexec/PlistBuddy -c 'Set :FK_StandardViewSettings:IconViewSettings:arrangeBy kind' ~/Library/Preferences/com.apple.finder.plist
+  
+- name: Sort icons on the desktop and in other icon views by kind
   shell: /usr/libexec/PlistBuddy -c 'Set :StandardViewSettings:IconViewSettings:arrangeBy kind' ~/Library/Preferences/com.apple.finder.plist
 
 - name: Change grid spacing for icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
+
+- name: Change grid spacing for icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
+
+- name: Change grid spacing for icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
 
 - name: Change the size of icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+
+- name: Change the size of icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+
+- name: Change the size of icons on the desktop and in other icon views
   shell: /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
 
 - name: Set highlight color to light blue (rgb values divided by 255)
@@ -85,6 +97,8 @@
 
 - name: Expand save panel by default
   shell: defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+- name: Expand save panel by default
   shell: defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 - name: Set sidebar icon size to small

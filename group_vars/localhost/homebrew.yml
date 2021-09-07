@@ -2,8 +2,6 @@ homebrew_install_path: /usr/local/homebrew
 
 homebrew_taps:
   - homebrew/core
-  - homebrew/binary
-  - homebrew/dupes
 
 homebrew_installed_packages:
   - ansible
@@ -11,29 +9,23 @@ homebrew_installed_packages:
   - awscli
   - curl
   - docker
-  - docker-compose
-  - docker-machine
   - dockutil
   - git
   - gnu-tar
   - gpg
   - htop
-  - iperf
   - k6
-  - node@10
+  - node@14
   - npm
   - openssl
   - pass
   - pkg-config
   - pyenv
-  - python
   - python@3.8
   - readline
-  - redis
   - ruby
-  - sshpass
   - telnet
-  - terraform
+  - tfenv
   - tflint
   - unzip
   - vim
@@ -42,18 +34,18 @@ homebrew_installed_packages:
 homebrew_uninstalled_packages: []
 
 homebrew_cask_apps:
-  - adobe-reader
+  - adobe-acrobat-reader
   - docker
   - firefox
-  - forticlient
   - google-chrome
   - iterm2
-  - java
+  # - java
+  # - microsoft-outlook
+  # - microsoft-teams
+  # - microsoft-word
   - pycharm-ce
   - robo-3t
-  - skype
   - spotify
-  - tuple
-  - virtualbox
   - visual-studio-code
+  - webstorm
   - whoozle-android-file-transfer

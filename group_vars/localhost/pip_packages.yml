@@ -1,8 +1,4 @@
 pip_packages:
   - { name: xmlrunner }
   - { name: selenium }
-  - { name: Pillow }
-  - { name: scikit-image }
   - { name: requests }
-  - { name: opencv-python, version: 3.3.0.9 }
-  - { name: scipy }

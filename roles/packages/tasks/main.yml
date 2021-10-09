@@ -1,2 +1,9 @@
 - include: npm_packages.yml
+  tags:
+    - packages  
+    - npm
+
 - include: pip_packages.yml
+  tags:
+    - packages  
+    - python

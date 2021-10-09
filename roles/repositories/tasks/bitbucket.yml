@@ -1,0 +1,7 @@
+- name: Clone BitBucket repositories
+  git:
+    repo: git@bitbucket.org:{{ bitbucket_org }}/{{ item.name }}.git
+    dest: ~/Documents/repositories/{{ item.name }}
+  with_items:
+    - "{{ repositories_bb_org }}"
+  when: bitbucket_org is defined  

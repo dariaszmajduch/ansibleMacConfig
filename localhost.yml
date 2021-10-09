@@ -3,8 +3,9 @@
   become: no
   vars:
     local_user_name: user.name
-    github_org_name: GH_org_name
-    bitbucket_org_name: BB_org_name
+    github_first_org: GH_org1_name
+    github_second_org: GH_org2_name
+    # bitbucket_org: BB_org_name
   roles:
     # - config
     - geerlingguy.homebrew

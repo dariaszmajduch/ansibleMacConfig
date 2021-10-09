@@ -1,0 +1,15 @@
+- name: Clone GitHub repositories from first organization
+  git:
+    repo: git@github.com:{{ github_first_org }}/{{ item.name }}.git
+    dest: ~/Documents/repositories/{{ item.name }}
+  with_items:
+    - "{{ repositories_gh_first_org }}"
+  when: github_first_org is defined  
+
+- name: Clone GitHub repositories from second organization
+  git:
+    repo: git@github.com:{{ github_second_org }}/{{ item.name }}.git
+    dest: ~/Documents/repositories/{{ item.name }}
+  with_items:
+    - "{{ repositories_gh_second_org }}"
+  when: github_second_org is defined  

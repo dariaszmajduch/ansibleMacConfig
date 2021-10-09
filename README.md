@@ -18,8 +18,10 @@ ansible-galaxy install fubarhouse.macdock
 ```
 6. In `localhost.yml`:
   - change local_user_name
-  - change github_org_name
-  - change bitbucket_org_name
+  - change github_first_org
+  - change github_second_org
+  - change bitbucket_org
+  If github / bitbucket org names are not set (commented), steps for these services will be skipped
 7. `config` role is by default disabled
   - **Be sure that copied files are correct (check present config, copy them and add the new config data)**
   - ssh keys and aws credentials (if needed) should be generated manually

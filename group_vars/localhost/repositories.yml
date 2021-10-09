@@ -1,10 +1,11 @@
-repositories_dir:
-  - name: 'GH_dir_name'
-    service: 'GitHub'
-    repositories:
-      - name: 'repo_name'
+repositories_gh_first_org:
+  - name: 'repo_1_name'
+  - name: 'repo_2_name'
 
-  - name: 'BB_dir_name'
-    service: 'BitBucket'
-    repositories:
-      - name: 'repo_name'
+repositories_gh_second_org:
+  - name: 'repo_1_name'
+  - name: 'repo_2_name'
+
+repositories_bb_org:
+  - name: 'repo_1_name'
+  - name: 'repo_2_name'

@@ -3,18 +3,24 @@
     path: ~/Documents/drivers
     state: directory
     mode: 0755
+  tags: 
+    - drivers  
 
 - name: Unarchive a chromedriver that needs to be downloaded
   unarchive:
     src: https://chromedriver.storage.googleapis.com/{{ chromedriver_version }}/chromedriver_mac64.zip
     dest: ~/Documents/drivers
     remote_src: yes
+  tags: 
+    - drivers    
 
 - name: Unarchive a geckodriver that needs to be downloaded
   unarchive:
     src: https://github.com/mozilla/geckodriver/releases/download/{{ geckodriver_version }}/geckodriver-{{ geckodriver_version }}-macos.tar.gz
     dest: ~/Documents/drivers
     remote_src: yes
+  tags: 
+    - drivers    
 
 - name: Adding the drivers path in the bash_profile file
   lineinfile:
@@ -22,3 +28,5 @@
     line: 'export PATH="$PATH:/Users/{{ local_user_name }}/Documents/drivers"'
     regexp: 'export PATH="\$PATH:/Users/{{ local_user_name }}/Documents/drivers"'
     state: present
+  tags: 
+    - drivers    

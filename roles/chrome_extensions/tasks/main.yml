@@ -3,6 +3,8 @@
     dest: /Users/{{ local_user_name }}/Library/Application Support/Google/Chrome/External Extensions
     state: directory
     mode: 0755
+  tags:
+    - chrome_extensions
 
 - name: Chrome Extensions
   template:
@@ -23,3 +25,5 @@
       id: pkoacgokdfckfpndoffpifphamojphii
     - name: URL Shortener
       id: oodfdmglhbbkkcngodjjagblikmoegpa
+  tags:
+    - chrome_extensions

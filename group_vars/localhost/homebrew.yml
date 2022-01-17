@@ -13,6 +13,7 @@ homebrew_installed_packages:
   - emacs
   - git
   - gnu-tar
+  - gnupg
   - gopass
   - gpg
   - htop
@@ -21,6 +22,7 @@ homebrew_installed_packages:
   - npm
   - openssl
   - pass
+  - pinentry-mac
   - pkg-config
   - pyenv
   - python@3.8

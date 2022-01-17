@@ -13,6 +13,7 @@ homebrew_installed_packages:
   - emacs
   - git
   - gnu-tar
+  - gopass
   - gpg
   - htop
   - k6
@@ -47,5 +48,7 @@ homebrew_cask_apps:
   - pycharm-ce
   - robo-3t
   - spotify
+  - vagrant
+  - virtualbox
   - visual-studio-code
   - webstorm

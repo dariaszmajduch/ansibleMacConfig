@@ -42,11 +42,13 @@ homebrew_cask_apps:
   - docker
   - firefox
   - google-chrome
+  - graphiql
   - iterm2
   - oracle-jdk
   - microsoft-outlook
   - microsoft-teams
   - microsoft-word
+  - postman
   - pycharm-ce
   - robo-3t
   - spotify

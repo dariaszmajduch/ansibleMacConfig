@@ -16,7 +16,9 @@ homebrew_installed_packages:
   - gnupg
   - gopass
   - gpg
+  - groovy
   - htop
+  - jq
   - k6
   - node@14
   - npm
@@ -26,6 +28,7 @@ homebrew_installed_packages:
   - pkg-config
   - pyenv
   - python@3.8
+  - python@3.10
   - readline
   - ruby
   - telnet

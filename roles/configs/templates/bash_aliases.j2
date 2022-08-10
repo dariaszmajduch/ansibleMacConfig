@@ -1,0 +1,47 @@
+# cd to dir with all repos
+alias cd_repo='cd ~/Documents/repositories'
+
+# generate pass and copy it to clipboard
+gen_pass() {
+  if [ $1 ]; then
+    length=$1
+  else
+    length=12
+  fi
+  hash=`python3 -c "
+import os,base64
+exec('print(base64.b64encode(os.urandom(64))[:${length}].decode(\'utf-8\'))')
+  "`
+  echo $hash | pbcopy
+  echo "new password copied to clipboard"
+}
+
+# create ansible-vault password
+new_v_pass() {
+  cd ~/Documents/credentials
+  touch $1.yml
+  echo $2 >> $1.yml
+  ansible-vault encrypt $1.yml 
+  cd -
+}
+
+# view ansible-vault password
+view_v_pass() {
+  cd ~/Documents/credentials
+  ansible-vault view $1.yml
+  cd -
+}
+
+# update ansible-vault password
+update_v_pass() {
+  cd ~/Documents/credentials
+  ansible-vault edit $1.yml
+  cd -
+}
+
+# list ansible-vault passwords
+list_v_pass() {
+  cd ~/Documents/credentials
+  ls
+  cd -
+}

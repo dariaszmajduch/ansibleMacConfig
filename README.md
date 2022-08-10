@@ -1,3 +1,4 @@
+## Configuration
 1. Check if Python is installed
 ```
 python --version
@@ -32,3 +33,18 @@ ansible-galaxy install fubarhouse.macdock
 ```
 ansible-playbook localhost.yml --ask-become-pass
 ```
+12. Add `.bash_aliases` import to `~/.bashrc` or to `.zshrc`
+```
+if [ -e $HOME/.bash_aliases ]; then
+    source $HOME/.bash_aliases
+fi
+```
+
+## Useful commands
+`ansible-playbook localhost.yml --ask-become-pass` - run the whole script
+
+`ansible-playbook --list-tasks localhost.yml` - list commands to execute
+
+`ansible-playbook --start-at-task="Create directory for creds" localhost.yml` - start script from step
+
+`ansible-playbook localhost.yml --tags config` - run commands with selected tags

@@ -1,0 +1,5 @@
+- name: Create directory for creds
+  file:
+    path: ~/Documents/credentials
+    state: directory
+    mode: 0700

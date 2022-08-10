@@ -1,0 +1,7 @@
+- name: Copy aliases config to home directory
+  template:
+    src: "{{ item.template }}"
+    dest: ~/{{ item.name }}
+  with_items:
+    - name: .bash_aliases
+      template: bash_aliases.j2

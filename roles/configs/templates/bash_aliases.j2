@@ -1,3 +1,15 @@
+list_commands() {
+  echo '''
+cd_repo - go to dir ~/Documents/repositories
+gen_pass length - create new password (if length not set then 12)
+new_v_pass file pass - create new password in selected file
+copy_v_pass pass_name - copy specific password to clipboard
+view_v_pass pass_name - view specific password
+update_v_pass pass_name - update specific password
+list_v_pass - list all passwords
+  '''
+}
+
 # cd to dir with all repos
 alias cd_repo='cd ~/Documents/repositories'
 
@@ -22,6 +34,15 @@ new_v_pass() {
   touch $1.yml
   echo $2 >> $1.yml
   ansible-vault encrypt $1.yml 
+  cd -
+}
+
+# copy ansible-vault password
+copy_v_pass() {
+  cd ~/Documents/credentials
+  v_pass=`ansible-vault view $1.yml`
+  echo $v_pass | awk NF | pbcopy
+  echo "password copied to clipboard"
   cd -
 }
 

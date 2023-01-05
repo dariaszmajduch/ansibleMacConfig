@@ -26,8 +26,8 @@ homebrew_installed_packages:
   - pass
   - pinentry-mac
   - pkg-config
+  - postgresql@14
   - pyenv
-  - python@3.8
   - python@3.10
   - readline
   - ruby

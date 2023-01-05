@@ -2,3 +2,4 @@ npm_packages:
   - bower
   - express
   - grunt
+  - yarn

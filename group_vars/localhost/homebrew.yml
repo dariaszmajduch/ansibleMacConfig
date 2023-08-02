@@ -37,6 +37,7 @@ homebrew_installed_packages:
   - unzip
   - vim
   - wget
+  - yamllint
 
 homebrew_uninstalled_packages: []
 
